@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 /**
-* main - generate random number to int n everytime.
-*
-* Return: always 0 (success)
+* main - entry point
+* Description: prints  if a number is positive or negative.
+* Return: 0
 */
 int main(void)
 {
@@ -14,16 +13,16 @@ int n;
 srand(time(0));
 n = rand() - RAND_MAX / 2;
 if (n > 0)
-printf("%d is positive\n");
+{
+printf("%d is positive\n", n);
 }
 else if (n == 0)
 {
-printf("%d is zero\n");
+printf("%d is zero\n", n);
 }
-else
+else if (n < 0)
 {
-printf("%d is negative\n");
+printf("%d is negative\n", n);
 }
-
 return (0);
 }
