@@ -1,20 +1,21 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(void)
+  * dlistint_len - Counts the number of elements in a doubly linked list
+  * @h: The double linked list to count
+  *
+  * Return: Number of elements in the doubly linked list
+  */
+size_t dlistint_len(const dlistint_t *h)
 {
-	dlistint_t head = {9, 0, 0};
-	dlistint_t tail = {6, 0, 0};
-	size_t n;
+	int lenght = 0;
 
-	head.next = &tail;
-	tail.prev = &head;
-	n = dlistint_len(&head);
-	printf("-> %lu elements\n", n);
-	return (0);
+	while (h != NULL)
+	{
+		++lenght;
+		h = h->next;
+	}
+
+	return (lenght);
 }

@@ -1,20 +1,30 @@
-#include <stdio.h>
 #include "lists.h"
 
 /**
- * main - check the code for Holberton School students.
+ * print_dlistint - prints all the elements of a
+ * dlistint_t list
  *
- * Return: Always 0.
+ * @h: head of the list
+ * Return: the number of nodes
  */
-int main(void)
+size_t print_dlistint(const dlistint_t *h)
 {
-	dlistint_t head = {9, 0, 0};
-	dlistint_t tail = {6, 0, 0};
-	size_t n;
+	int count;
 
-	head.next = &tail;
-	tail.prev = &head;
-	n = dlistint_len(&head);
-	printf("-> %lu elements\n", n);
-	return (0);
+	count = 0;
+
+	if (h == NULL)
+		return (count);
+
+	while (h->prev != NULL)
+		h = h->prev;
+
+	while (h != NULL)
+	{
+		printf("%d\n", h->n);
+		count++;
+		h = h->next;
+	}
+
+	return (count);
 }
