@@ -31,8 +31,5 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 
 
-<<<<<<< HEAD:0x17-doubly_linked_lists/list.h
 #endif
-=======
-#endif 
->>>>>>> 9e0a0a5b851230fcd64bb88580919e08983ce6b1:0x17-doubly_linked_lists/lists.h
+
